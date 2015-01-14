@@ -114,7 +114,7 @@ class KosarajuAlgo:
         self.sccs[leader].append(i)
         for j in i.getConnections():
             if not j.isExplored():
-                self.dfs(j, leader)
+                self.dfs(j, leader, isFirstDFSLoopCall)
         self.finishingTime += 1
         i.setFinish(self.finishingTime)
         if isFirstDFSLoopCall:
